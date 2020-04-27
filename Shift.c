@@ -9,7 +9,7 @@
 *
 * Support mail      : 7361smi@gmail.com
 *
-* Description       : ѕрограмма дл€ реализации сдвига влево и вправо.
+* Description       : Tsiklicheskiy sdvig vlevo i vpravo.
 *
 ********************************************************************************/
 #define _CRT_SECURE_NO_WARNINGS
@@ -21,32 +21,32 @@
 int main(void)
 {
 	int N = 10;
-	int A[10] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }; //исходный массив
+	int A[10] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }; //iskhodnyj massiv
 	int shift;
 	int path;
 	printf("Array for shift:  0 1 2 3 4 5 6 7 8 9 \n");
 	printf("\n");
 	printf("Enter shift size: \n");
-	scanf("%d", &shift); //выбор размера сдвига
+	scanf("%d", &shift); //vybor razmera sdviga
 	printf("\n");
 	printf("Enter the direction of the shift (1 - left , 2 - right): \n");
-	scanf("%d", &path); //выбор направлени€ сдвига
+	scanf("%d", &path); //vybor napravleniya sdviga
 	printf("\n");
 	if (path == 1)
 	{
 		int tmp1;
-		for (int j = 0; j < shift; ++j) //цикл сдвига влево
+		for (int j = 0; j < shift; ++j) //cikl sdviga vlevo
 		{
 			tmp1 = A[0];
-			for (int i = 0; i < N - 1; ++i) //проход по массиву
+			for (int i = 0; i < N - 1; ++i) //prohod po massivu
 			{
-				A[i] = A[i + 1]; //текущему члену массива присвоить значение следующего
+				A[i] = A[i + 1]; //tekushchemu chlenu massiva prisvoit' znachenie sleduyushchego
 			}
-			A[N - 1] = tmp1; // присвоить последнему члену значение первого
+			A[N - 1] = tmp1; // prisvoit' poslednemu chlenu znachenie pervogo
 		}
 		for (int i = 0; i <= N - 1; ++i)
 		{
-			printf("%d ", A[i]); //вывод результата
+			printf("%d ", A[i]); //vyvod rezul'tata
 		}
 		printf("\n");
 		system("pause");
@@ -54,18 +54,18 @@ int main(void)
 	if (path == 2)
 	{
 		int tmp1;
-		for (int j = 0; j < shift; ++j) //цикл сдвига вправо
+		for (int j = 0; j < shift; ++j) //cikl sdviga vpravo
 		{
 			tmp1 = A[N - 1];
-			for (int i = N - 1; i > 0; --i) //проход по массиву (с конца в начало)
+			for (int i = N - 1; i > 0; --i) //prohod po massivu (s konca v nachalo)
 			{
-				A[i] = A[i - 1]; //текущему члену массива присвоить значение предыдущего
+				A[i] = A[i - 1]; //tekushchemu chlenu massiva prisvoit' znachenie predydushchego
 			}
-			A[0] = tmp1; //присвоить первому члену значение последнего
+			A[0] = tmp1; //prisvoit' pervomu chlenu znachenie poslednego
 		}
 		for (int i = 0; i < N; i++)
 		{
-			printf("%d ", A[i]); //вывод результата
+			printf("%d ", A[i]); //vyvod rezul'tata
 		}
 		printf("\n");
 		system("pause");
